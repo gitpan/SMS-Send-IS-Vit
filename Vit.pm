@@ -5,7 +5,7 @@ use SMS::Send::Driver ();
 use LWP::UserAgent ();
 use HTTP::Cookies ();
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 our @ISA = 'SMS::Send::Driver';
 
@@ -127,15 +127,15 @@ SMS::Send::IS::Vit - SMS::Send driver for vit.is
 =head1 DESCRIPTION
 
 A regional L<SMS::Send> driver for Iceland that deliers messages via
-L<http://vit.is>. Vit only supports ending sms messages to its own
-users, see L<SMS::Send::IS::Vodafone> for sending SMS to Vodafone
-users.
+L<http://vit.is>. Vit only supports ending sms messages to
+SE<iacute>minn users, see L<SMS::Send::IS::Vodafone> for sending SMS
+to Vodafone users.
 
 =head1 CAVEATS
 
 This module will call C<sleep(1)> when it first retrieves a cookie
 before it submits the sms. The vit.is server does not seem to
-recognize a cookie it just handed out.
+recognize a cookie it handed out until after a slight delay.
 
 =head1 AUTHOR
 
@@ -143,7 +143,7 @@ E<AElig>var ArnfjE<ouml>rE<eth> Bjarmason <avar@cpan.org>
 
 =head1 LICENSE
 
-Copyright 2007 E<AElig>var ArnfjE<ouml>rE<eth> Bjarmason.
+Copyright 2007-2008 E<AElig>var ArnfjE<ouml>rE<eth> Bjarmason.
 
 This program is free software; you can redistribute it and/or modify it
 under the same terms as Perl itself.
