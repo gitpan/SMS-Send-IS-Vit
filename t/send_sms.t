@@ -6,7 +6,7 @@ my $number;
 if ($number = $ENV{SMS_TO}) {
     plan tests => 1;
 } else {
-    plan skip_all => "Set SMS_TO to a valid Vit number to test sms sending";
+    plan skip_all => "Set SMS_TO to a valid number to test sms sending";
 }
 
 my $sender = SMS::Send->new("IS::Vit");
